@@ -4,7 +4,7 @@ A CLI script that takes a position in a JS file inside an npm package, and
 outputs a directed graph of all of the functions that call the function at that
 position.
 
-![demo](http://i.imgur.com/wyF4TeA.gifv)
+![demo](http://i.imgur.com/wyF4TeA.gif)
 
 ## installation, or:
 ## vim + graphviz + quicklook
