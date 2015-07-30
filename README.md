@@ -6,6 +6,7 @@ position.
 
 ![demo](http://i.imgur.com/wyF4TeA.gifv)
 
+## installation, or:
 ## vim + graphviz + quicklook
 
 My provenance setup requires:
@@ -19,6 +20,7 @@ stdin as a tempfile and use `qlmanage` to quickly display it:
 
 ```bash
 #!/bin/bash
+# call this file "ql" and `chmod +x` it
 tmpfile=$(mktemp -t ql)
 mv "$tmpfile"{,.png}
 tmpfile=${tmpfile}.png
@@ -30,6 +32,7 @@ rm $tmpfile
 With that file on `$PATH` as `ql`, I added the following info to my `.vimrc`:
 
 ```vim
+" ~/.vimrc
 nmap <leader>sx :exe "!iojs /path/to/provenance/bin/provenance % " . line(".") . " " . col(".") . "\| dot -Tpng \| ql" <CR>
 ```
 
