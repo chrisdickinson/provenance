@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+var path = require('path')
+console.error(process.argv)
+require('../lib/provenance.js')(path.resolve(process.argv[2]), {
+  line: Number(process.argv[3]),
+  col: Number(process.argv[4])
+}, oncomplete)
+
+function oncomplete (err, data) {
+  console.log(err ? err.stack : data)
+}
